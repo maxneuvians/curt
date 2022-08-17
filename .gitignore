@@ -127,3 +127,22 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.vscode
+**/*.DS_Store
+
+# compiled assets
+storage/compiled
+.coverage
+
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+.terragrunt*
+.terraform*
+
+*.sqlite3
