@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}{{ t('find_services') }}{% endblock %}
+
+{% block content %}
+<h1 class="text-2xl font-bold mb-10"><a href="{{ route('home') }}">{{ t('home') }}</a> > {{ t('find_services') }}</h1>
+<div class="grid grid-cols-3 gap-8">
+    <div class="justify-center border-2 border-gray-400 relative">
+        <div class="p-5 text-center text-white bg-gray-400">Having a Child</div>
+        <div class="px-5 pt-5 pb-10 text-center text-sm mb-10">
+            Major life events like having a baby can be complicated because there are so many things to know. Our service supports you by connecting you to guidance to help you make the right decision for you. Come explore this early version of our New Child Journey Information Service.
+        </div>
+        <div class="mx-5 mb-5 p-2 text-center text-white bg-gray-900 text-sm absolute inset-x-0 bottom-0 sign-up-link">
+            <a href="{{ route('feedback_signup', {}, query_params = {'service': 'Having a Child'}) }}">{{ t('sign_up_to_provide_feedback') }}</a>
+        </div>
+    </div>
+    <div class="justify-center border-2 border-gray-400 relative">
+        <div class="p-5 text-center text-white bg-gray-400">IRCC Chatbot</div>
+        <div class="px-5 pt-5 pb-10 text-center text-sm mb-10">
+            The IRCC Virtual Assistant is a conversational chatbot. It is designed to help you overcome common obstacles you may face when applying for services.
+        </div>
+        <div class="mx-5 mb-5 p-2 text-center text-white bg-gray-900 text-sm absolute inset-x-0 bottom-0 sign-up-link">
+            <a href="{{ route('feedback_signup', {}, query_params = {'service': 'IRCC Chatbot'}) }}">{{ t('sign_up_to_provide_feedback') }}</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

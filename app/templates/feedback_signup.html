@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+{% block title %}{{ t('feedback_signup') }} > {{service}}{% endblock %}
+
+{% block content %}
+<h1 class="text-2xl font-bold mb-10"><a href="{{ route('home') }}">{{ t('home') }}</a> > <a
+        href="{{ route('find_services') }}">{{ t('find_services') }}</a> > {{ t('feedback_signup') }} > {{service}}</h1>
+<div>
+    <div class="pb-10 text-base">
+        {{ t('feedback_signup_intro') }}
+    </div>
+    <form id="form">
+        {{ csrf_field }}
+        <div class="focus-group">
+            <label class="gc-label">
+                {{t("first_name")}}
+                <span class="text-red-800" aria-hidden="true"> ({{t("required")}})</span>
+            </label>
+            <input type="text" name="first_name" class="gc-input-text" required>
+        </div>
+        <div class="focus-group">
+            <label class="gc-label">
+                {{t("email")}}
+                <span class="text-red-800" aria-hidden="true"> ({{t("required")}})</span>
+            </label>
+            <input type="email" name="email" class="gc-input-text" required>
+        </div>
+        <div class="focus-group">
+            <label class="gc-label">
+                {{t("postal_code")}}
+                <span class="text-red-800" aria-hidden="true"> ({{t("required")}})</span>
+            </label>
+            <input type="text" name="postal_code" class="gc-input-text" required>
+        </div>
+        <div class="focus-group">
+            <label class="gc-label">
+                {{t("age_group")}}
+                <span class="text-red-800" aria-hidden="true"> ({{t("required")}})</span>
+            </label>
+            <div class="gc-input-radio">
+                <input type="radio" id="under17" name="age_group" value="under17" class="gc-radio__input">
+                <label for="under17" class="gc-radio-label">
+                    <span class="radio-label-text">{{t("under_17_years_old")}}</span>
+                </label>
+            </div>
+            <div class="gc-input-radio">
+                <input type="radio" id="18_25_years" name="age_group" value="18_25_years" class="gc-radio__input">
+                <label for="18_25_years" class="gc-radio-label">
+                    <span class="radio-label-text">{{t("18_25_years")}}</span>
+                </label>
+            </div>
+            <div class="gc-input-radio">
+                <input type="radio" id="26_34_years" name="age_group" value="26_34_years" class="gc-radio__input">
+                <label for="26_34_years" class="gc-radio-label">
+                    <span class="radio-label-text">{{t("26_34_years")}}</span>
+                </label>
+            </div>
+            <div class="gc-input-radio">
+                <input type="radio" id="35_44_years" name="age_group" value="35_44_years" class="gc-radio__input">
+                <label for="35_44_years" class="gc-radio-label">
+                    <span class="radio-label-text">{{t("35_44_years")}}</span>
+                </label>
+            </div>
+            <div class="gc-input-radio">
+                <input type="radio" id="45_54_years" name="age_group" value="45_54_years" class="gc-radio__input">
+                <label for="45_54_years" class="gc-radio-label">
+                    <span class="radio-label-text">{{t("45_54_years")}}</span>
+                </label>
+            </div>
+            <div class="gc-input-radio">
+                <input type="radio" id="55_64_years" name="age_group" value="55_64_years" class="gc-radio__input">
+                <label for="55_64_years" class="gc-radio-label">
+                    <span class="radio-label-text">{{t("55_64_years")}}</span>
+                </label>
+            </div>
+            <div class="gc-input-radio">
+                <input type="radio" id="over_65_years" name="age_group" value="over_65_years" class="gc-radio__input">
+                <label for="over_65_years" class="gc-radio-label">
+                    <span class="radio-label-text">{{t("over_65_years")}}</span>
+                </label>
+            </div>
+        </div>
+        <div class="focus-group">
+            <label class="gc-label">
+                {{t("devices")}}
+                <span class="text-red-800" aria-hidden="true"> ({{t("required")}})</span>
+            </label>
+            <div class="gc-input-checkbox">
+                <input type="checkbox" id="smartphone" name="devices" value="smartphone" class="gc-input-checkbox__input">
+                <label for="smartphone" class="gc-checkbox-label">
+                    <span class="checkbox-label-text">{{t("smartphone")}}</span>
+                </label>
+            </div>
+            <div class="gc-input-checkbox">
+                <input type="checkbox" id="tablet" name="devices" value="tablet" class="gc-input-checkbox__input">
+                <label for="tablet" class="gc-checkbox-label">
+                    <span class="checkbox-label-text">{{t("tablet")}}</span>
+                </label>
+            </div>
+            <div class="gc-input-checkbox">
+                <input type="checkbox" id="personal_computer" name="devices" value="personal_computer" class="gc-input-checkbox__input">
+                <label for="personal_computer" class="gc-checkbox-label">
+                    <span class="checkbox-label-text">{{t("personal_computer")}}</span>
+                </label>
+            </div>
+        </div>
+        <div class="focus-group">
+            <label class="gc-label">
+                {{t("device_used_most_often")}}
+                <span class="text-red-800" aria-hidden="true"> ({{t("required")}})</span>
+            </label>
+            <div class="gc-input-radio">
+                <input type="radio" id="used_smartphone" name="device_used_most_often" value="smartphone" class="gc-radio__input">
+                <label for="used_smartphone" class="gc-radio-label">
+                    <span class="radio-label-text">{{t("smartphone")}}</span>
+                </label>
+            </div>
+            <div class="gc-input-radio">
+                <input type="radio" id="used_tablet" name="device_used_most_often" value="tablet" class="gc-radio__input">
+                <label for="used_tablet" class="gc-radio-label">
+                    <span class="radio-label-text">{{t("tablet")}}</span>
+                </label>
+            </div>
+            <div class="gc-input-radio">
+                <input type="radio" id="used_personal_computer" name="device_used_most_often" value="personal_computer" class="gc-radio__input">
+                <label for="used_personal_computer" class="gc-radio-label">
+                    <span class="radio-label-text">{{t("personal_computer")}}</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="focus-group">
+            <label class="gc-label">
+                {{t("assistive_technology")}}
+                <span class="text-red-800" aria-hidden="true"> ({{t("required")}})</span>
+            </label>
+            <div class="gc-input-radio">
+                <input type="radio" id="assistive_technology_no" name="assistive_technology" value="no" class="gc-radio__input">
+                <label for="assistive_technology_no" class="gc-radio-label">
+                    <span class="radio-label-text">{{t("no")}}</span>
+                </label>
+            </div>
+            <div class="gc-input-radio">
+                <input type="radio" id="assistive_technology_yes" name="assistive_technology" value="yes" class="gc-radio__input">
+                <label for="assistive_technology_yes" class="gc-radio-label">
+                    <span class="radio-label-text">{{t("yes")}}</span>
+                </label>
+            </div>
+            <label>
+                {{t("yes_assistive_technology")}}
+            </label>
+            <br/>
+            <input type="text" name="yes_assistive_technology" class="gc-input-text">
+        </div>
+
+        <div class="focus-group">
+            <label class="gc-label">
+                {{t("participate_accessibility_testing")}}
+                <span class="text-red-800" aria-hidden="true"> ({{t("required")}})</span>
+            </label>
+            <div class="gc-input-radio">
+                <input type="radio" id="participate_accessibility_testing_no" name="participate_accessibility_testing" value="no" class="gc-radio__input">
+                <label for="participate_accessibility_testing_no" class="gc-radio-label">
+                    <span class="radio-label-text">{{t("no")}}</span>
+                </label>
+            </div>
+            <div class="gc-input-radio">
+                <input type="radio" id="participate_accessibility_testing_yes" name="participate_accessibility_testing" value="yes" class="gc-radio__input">
+                <label for="participate_accessibility_testing_yes" class="gc-radio-label">
+                    <span class="radio-label-text">{{t("yes")}}</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <input type="hidden" name="service" value="{{service}}" />
+            <button class="gc-button">{{t("complete_signup")}}</button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}
