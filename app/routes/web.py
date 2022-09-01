@@ -10,4 +10,5 @@ ROUTES = [
     Route.get("/find_services", "FindServicesController@show").name("find_services").middleware("auth"),
     Route.get("/find_users", "FindUsersController@show").name("find_users").middleware("auth"),
     Route.get("/feedback_signup/?service", "FeedbackSignupController@show").name("feedback_signup").middleware("auth"),
+    Route.post("/signup", "SignUpController@show").name("signup_complete").middleware("auth"),
 ]

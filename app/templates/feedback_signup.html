@@ -8,7 +8,7 @@
     <div class="pb-10 text-base">
         {{ t('feedback_signup_intro') }}
     </div>
-    <form id="form">
+    <form id="form" method="post" action="/signup">
         {{ csrf_field }}
         <div class="focus-group">
             <label class="gc-label">
@@ -37,7 +37,7 @@
                 <span class="text-red-800" aria-hidden="true"> ({{t("required")}})</span>
             </label>
             <div class="gc-input-radio">
-                <input type="radio" id="under17" name="age_group" value="under17" class="gc-radio__input">
+                <input type="radio" id="under17" name="age_group" value="under17" class="gc-radio__input" required>
                 <label for="under17" class="gc-radio-label">
                     <span class="radio-label-text">{{t("under_17_years_old")}}</span>
                 </label>
@@ -109,7 +109,7 @@
                 <span class="text-red-800" aria-hidden="true"> ({{t("required")}})</span>
             </label>
             <div class="gc-input-radio">
-                <input type="radio" id="used_smartphone" name="device_used_most_often" value="smartphone" class="gc-radio__input">
+                <input type="radio" id="used_smartphone" name="device_used_most_often" value="smartphone" class="gc-radio__input" required>
                 <label for="used_smartphone" class="gc-radio-label">
                     <span class="radio-label-text">{{t("smartphone")}}</span>
                 </label>
@@ -134,7 +134,7 @@
                 <span class="text-red-800" aria-hidden="true"> ({{t("required")}})</span>
             </label>
             <div class="gc-input-radio">
-                <input type="radio" id="assistive_technology_no" name="assistive_technology" value="no" class="gc-radio__input">
+                <input type="radio" id="assistive_technology_no" name="assistive_technology" value="no" class="gc-radio__input" required>
                 <label for="assistive_technology_no" class="gc-radio-label">
                     <span class="radio-label-text">{{t("no")}}</span>
                 </label>
@@ -158,7 +158,7 @@
                 <span class="text-red-800" aria-hidden="true"> ({{t("required")}})</span>
             </label>
             <div class="gc-input-radio">
-                <input type="radio" id="participate_accessibility_testing_no" name="participate_accessibility_testing" value="no" class="gc-radio__input">
+                <input type="radio" id="participate_accessibility_testing_no" name="participate_accessibility_testing" value="no" class="gc-radio__input" required>
                 <label for="participate_accessibility_testing_no" class="gc-radio-label">
                     <span class="radio-label-text">{{t("no")}}</span>
                 </label>
@@ -173,7 +173,7 @@
 
         <div class="buttons">
             <input type="hidden" name="service" value="{{service}}" />
-            <button class="gc-button">{{t("complete_signup")}}</button>
+            <button type="submit" class="gc-button">{{t("complete_signup")}}</button>
         </div>
 
     </form>
